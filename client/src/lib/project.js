@@ -1,7 +1,7 @@
-import mokomdo from "../assets/project/mokomdo_thumbnail.png";
-import mokomdo_text from "../assets/project/mokomdo-text.png";
-import zeroone from "../assets/project/z-one.png";
-import ol from "../assets/project/ol.png";
+import mokomdo from "../assets/project/mokomdo_thumbnail.webp";
+import mokomdo_text from "../assets/project/mokomdo-text.webp";
+import zeroone from "../assets/project/z-one.webp";
+import ol from "../assets/project/ol.webp";
 
 export const myProject = [
   {
