@@ -1,0 +1,67 @@
+.point {
+    display: inline-block;
+    background-color: #865DFF;
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 9px;
+    position: absolute;
+    z-index: -99;
+    top: -7.2px;
+    left: 1.2px;
+    transform: rotate(45deg);
+    transition: all .3s;
+}
+
+.fe {
+    transition: all .3s;
+}
+
+.aese:hover .fe {
+    color: #865DFF;
+}
+
+.aese:hover .point {
+    color: #865DFF;
+    background-color: transparent;
+    border: 2px solid #865DFF;
+    width: 45px;
+    height: 45px;
+    border-radius: 9px;
+    top: -7.2px;
+    left: 2.2px;
+    transform: rotate(225deg);
+}
+
+.button-dark {
+    background-color: rgba(193, 193, 193, 1);
+    width: 70px;
+    height: 35px;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+
+.button-dark::before {
+    position: absolute;
+    content: '';
+    background-color: rgba(25, 24, 37, 1);
+    width: 30px;
+    height: 80%;
+    border-radius: 200px;
+    margin: 3.5px 4px 1px;
+    transition: 0.2s;
+}
+
+input:checked+.button-dark {
+    background-color: #865DFF;
+}
+
+input:checked+.button-dark::before {
+    transform: translateX(33px);
+}
+
+.check {
+    display: none;
+}

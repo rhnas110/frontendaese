@@ -1,0 +1,73 @@
+.animate {
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+
+.animate_delay-nf {
+    animation-delay: 1.5s;
+}
+
+.animate {
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+.flipInX {
+    opacity: 0;
+    animation-name: flipInX;
+    -webkit-animation-name: flipInX;
+}
+
+.animate_delay-1 {
+    animation-delay: calc(1s - 500);
+}
+
+.animate_delay-2 {
+    animation-delay: calc(2s - 1000ms);
+}
+
+.animate_delay-3 {
+    animation-delay: calc(3s - 1500ms);
+}
+
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0, 40px, 0)
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1
+    }
+}
+
+@keyframes flipInX {
+    0% {
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+
+    40% {
+        transform: perspective(400px) rotateX(-10deg);
+    }
+
+    70% {
+        transform: perspective(400px) rotateX(10deg);
+    }
+
+    100% {
+        transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}

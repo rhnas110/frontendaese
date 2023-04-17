@@ -1,0 +1,22 @@
+.scroll-down {
+    animation: upAndDown 1.5s ease infinite alternate forwards;
+}
+
+@keyframes upAndDown {
+    0% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(4px);
+    }
+}
+
+/* Project */
+.project-box {
+    box-shadow: 0 0 1rem rgba(1, 2, 3, .69);
+}
+
+.project-box:hover .project-layer {
+    transform: translateY(0);
+}
