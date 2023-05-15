@@ -108,9 +108,6 @@ export const Contact = ({ isMobile, isTablet, isSmall }) => {
     }
   };
 
-  console.log(process.env);
-  console.log(serviceId);
-
   function onChange(value) {
     // set expired time
     const afterOneMinutes = new Date(new Date().getTime() + 1 * 60000);
