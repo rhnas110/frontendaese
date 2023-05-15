@@ -40,7 +40,11 @@ function App() {
         />
         <Route
           path="/about"
-          element={<h4 style={{ textAlign: "center" }}>Coming Soon...</h4>}
+          element={
+            <h4 style={{ textAlign: "center", marginTop: "1rem" }}>
+              Coming Soon...
+            </h4>
+          }
         />
 
         <Route path="*" element={<NotFoundPage />} />

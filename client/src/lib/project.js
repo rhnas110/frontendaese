@@ -2,6 +2,7 @@ import mokomdo from "../assets/project/mokomdo_thumbnail.webp";
 import mokomdo_text from "../assets/project/mokomdo-text.webp";
 import zeroone from "../assets/project/z-one.webp";
 import ol from "../assets/project/ol.webp";
+import f_aese from "../assets/project/f-aese.webp";
 
 export const myProject = [
   {
@@ -47,6 +48,17 @@ export const myProject = [
     demo: "https://dribbble.com/shots/20879174-OpenLibrary",
     status: "stop",
     link: "",
+    figma: "",
+  },
+  {
+    id: 5,
+    image: f_aese,
+    title: "frontendaese",
+    desc: "My Simple Portfolio Website",
+    github: "https://github.com/rhnas110/frontendaese",
+    demo: "",
+    status: "continue",
+    link: "https://frontendaese.space/",
     figma: "",
   },
 ];

@@ -13,11 +13,27 @@ import { myContact } from "../../lib/contact";
 import { Formik, ErrorMessage, Form, Field } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
+
+const {
+  REACT_APP_SERVICE_ID,
+  REACT_APP_TEMPLATE_ID,
+  REACT_APP_EMAIL_KEY,
+  REACT_APP_CAPTCHA_KEY,
+} = process.env;
+
+const serviceId = REACT_APP_SERVICE_ID;
+const templateId = REACT_APP_TEMPLATE_ID;
+const emailKey = REACT_APP_EMAIL_KEY;
+const captchaKey = REACT_APP_CAPTCHA_KEY;
 
 export const Contact = ({ isMobile, isTablet, isSmall }) => {
   const [loading, setLoading] = useState(false);
+  const [verify, setVerify] = useState(false);
+  const [verifyTime, setVerifyTime] = useState("");
   const toast = useToast();
   const form = useRef();
+  const captcha = useRef(null);
 
   const SendValid = Yup.object().shape({
     name: Yup.string()
@@ -31,14 +47,27 @@ export const Contact = ({ isMobile, isTablet, isSmall }) => {
 
   const sendEmail = (values, action) => {
     setLoading(true);
-    emailjs
-      .sendForm(
-        "service_gbz9jb7",
-        "template_oj2unqt",
-        form.current,
-        "U6BzxcayeO78toaUe"
-      )
-      .then(
+    const now = new Date();
+    if (now.toString() >= verifyTime?.toString()) {
+      setVerify(false);
+      setLoading(false);
+      return toast({
+        position: "top",
+        duration: 2000,
+        render: () => (
+          <Box
+            color="whitesmoke"
+            p={3}
+            bg="#865DFF"
+            textAlign={"center"}
+            borderRadius={"md"}
+          >
+            Your Captcha expired
+          </Box>
+        ),
+      });
+    } else {
+      emailjs.sendForm(serviceId, templateId, form.current, emailKey).then(
         (result) => {
           setLoading(false);
           toast({
@@ -60,6 +89,8 @@ export const Contact = ({ isMobile, isTablet, isSmall }) => {
             ),
           });
           action.resetForm();
+          captcha.current.reset();
+          setVerify(false);
           // console.log(result.text);
         },
         (error) => {
@@ -74,7 +105,18 @@ export const Contact = ({ isMobile, isTablet, isSmall }) => {
           // console.log(error.text);
         }
       );
+    }
   };
+
+  console.log(process.env);
+  console.log(serviceId);
+
+  function onChange(value) {
+    // set expired time
+    const afterOneMinutes = new Date(new Date().getTime() + 1 * 60000);
+    setVerifyTime(afterOneMinutes);
+    setVerify(true);
+  }
 
   return (
     <Box
@@ -210,6 +252,13 @@ export const Contact = ({ isMobile, isTablet, isSmall }) => {
                       name="message"
                     />
                   </FormControl>
+                  <FormControl mt="20px">
+                    <ReCAPTCHA
+                      ref={captcha}
+                      sitekey={captchaKey}
+                      onChange={onChange}
+                    />
+                  </FormControl>
                   <Box textAlign={"right"}>
                     <Button
                       mt="8"
@@ -219,6 +268,7 @@ export const Contact = ({ isMobile, isTablet, isSmall }) => {
                       _hover={{ bgColor: "#6851D2" }}
                       _active={{ bgColor: "#865DFF" }}
                       isLoading={loading}
+                      isDisabled={verify ? false : true}
                     >
                       Send
                     </Button>

@@ -47,7 +47,7 @@ export const Footer = () => {
             fontWeight={"semibold"}
             textDecoration={"underline"}
           >
-            aese v0.1
+            aese v0.2
           </Text>
         </Text>
       </Box>

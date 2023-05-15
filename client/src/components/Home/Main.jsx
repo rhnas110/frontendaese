@@ -1,7 +1,18 @@
-import { Box, Button, Img, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Img,
+  Text,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from "@chakra-ui/react";
+import { AiOutlineDownload } from "react-icons/ai";
 import abc from "../../assets/abc.png";
 import scrollDown from "../../assets/scroll.png";
 import myCV from "../../assets/cv/CV-17042023.pdf";
+import myResume from "../../assets/resume/RESUME.docx";
 
 export const Main = ({ downloadCV, isTablet, isMobile, loading }) => {
   return (
@@ -36,20 +47,38 @@ export const Main = ({ downloadCV, isTablet, isMobile, loading }) => {
             fallen in love with web development and spend most of my days taking
             my skills to the next level.
           </Text>
-          <Button
-            mt={"6"}
-            isLoading={loading}
-            onClick={() => downloadCV()}
-            bgColor={"#865DFF"}
-            _hover={{ bgColor: "#6851D2" }}
-            _active={{ bgColor: "#865DFF" }}
-            className="animate fadeInUp animate_delay-3"
-            as={"a"}
-            href={myCV}
-            download
-          >
-            Download CV
-          </Button>
+          <Menu>
+            <MenuButton
+              as={Button}
+              rightIcon={<AiOutlineDownload />}
+              mt={"6"}
+              bgColor={"#865DFF"}
+              _hover={{ bgColor: "#6851D2" }}
+              _active={{ bgColor: "#865DFF" }}
+              className="animate fadeInUp animate_delay-3"
+              isLoading={loading}
+            >
+              Download
+            </MenuButton>
+            <MenuList color={"#191825"}>
+              <MenuItem
+                onClick={() => downloadCV()}
+                as={"a"}
+                href={myCV}
+                download
+              >
+                CV
+              </MenuItem>
+              <MenuItem
+                onClick={() => downloadCV()}
+                as={"a"}
+                href={myResume}
+                download
+              >
+                Resume
+              </MenuItem>
+            </MenuList>
+          </Menu>
         </Box>
         <Box
           w={isTablet ? "100%" : "50%"}
