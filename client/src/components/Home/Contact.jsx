@@ -16,16 +16,11 @@ import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const {
-  REACT_APP_SERVICE_ID,
-  REACT_APP_TEMPLATE_ID,
-  REACT_APP_EMAIL_KEY,
-  REACT_APP_CAPTCHA_KEY,
+  REACT_APP_SERVICE_ID: serviceId,
+  REACT_APP_TEMPLATE_ID: templateId,
+  REACT_APP_EMAIL_KEY: emailKey,
+  REACT_APP_CAPTCHA_KEY: captchaKey,
 } = process.env;
-
-const serviceId = REACT_APP_SERVICE_ID;
-const templateId = REACT_APP_TEMPLATE_ID;
-const emailKey = REACT_APP_EMAIL_KEY;
-const captchaKey = REACT_APP_CAPTCHA_KEY;
 
 export const Contact = ({ isMobile, isTablet, isSmall }) => {
   const [loading, setLoading] = useState(false);

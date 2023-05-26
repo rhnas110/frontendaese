@@ -17,6 +17,8 @@ function App() {
       setLoading(false);
     }, 1234);
   }, []);
+
+  console.log(process.env.REACT_APP_ABOUT);
   return (
     <>
       <Routes>
@@ -41,9 +43,9 @@ function App() {
         <Route
           path="/about"
           element={
-            <h4 style={{ textAlign: "center", marginTop: "1rem" }}>
-              Coming Soon...
-            </h4>
+            <div style={{ textAlign: "center", marginTop: "1rem" }}>
+              <h4>Coming {process.env.REACT_APP_ABOUT}</h4>
+            </div>
           }
         />
 

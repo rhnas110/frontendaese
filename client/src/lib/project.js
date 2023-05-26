@@ -3,6 +3,8 @@ import mokomdo_text from "../assets/project/mokomdo-text.webp";
 import zeroone from "../assets/project/z-one.webp";
 import ol from "../assets/project/ol.webp";
 import f_aese from "../assets/project/f-aese.webp";
+import dicoding from "../assets/project/dicoding.webp";
+import bandung from "../assets/project/bandung.webp";
 
 export const myProject = [
   {
@@ -30,6 +32,17 @@ export const myProject = [
   },
   {
     id: 3,
+    image: f_aese,
+    title: "frontendaese",
+    desc: "My Simple Portfolio Website",
+    github: "https://github.com/rhnas110/frontendaese",
+    demo: "",
+    status: "continue",
+    link: "https://frontendaese.space/",
+    figma: "",
+  },
+  {
+    id: 4,
     image: zeroone,
     title: "ZeroOne",
     desc: "ZeroOne is a mini project that is copying Netflix.",
@@ -40,7 +53,7 @@ export const myProject = [
     figma: "",
   },
   {
-    id: 4,
+    id: 5,
     image: ol,
     title: "Open Library",
     desc: "is a library project where you can borrow books anytime and anywhere",
@@ -51,14 +64,27 @@ export const myProject = [
     figma: "",
   },
   {
-    id: 5,
-    image: f_aese,
-    title: "frontendaese",
-    desc: "My Simple Portfolio Website",
-    github: "https://github.com/rhnas110/frontendaese",
+    id: 6,
+    image: dicoding,
+    title: "Landing Page Dicoding",
+    desc: "Simple Landing Page Dicoding",
+    github:
+      "https://github.com/rhnas110/dicoding/tree/main/web_dasar/landing_page_dicoding",
     demo: "",
-    status: "continue",
-    link: "https://frontendaese.space/",
+    status: "done",
+    link: "https://dicoding.netlify.app/",
+    figma: "",
+  },
+  {
+    id: 7,
+    image: bandung,
+    title: "Kota Bandung",
+    desc: "small project to try Magnify JS",
+    github:
+      "https://github.com/rhnas110/dicoding/tree/main/web_dasar/halaman_profile_bandung",
+    demo: "",
+    status: "stop",
+    link: "https://kota-bandung.netlify.app/",
     figma: "",
   },
 ];

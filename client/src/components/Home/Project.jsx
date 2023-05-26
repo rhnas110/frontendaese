@@ -36,13 +36,15 @@ export const Project = ({ isMobile, isTablet, isSmall }) => {
           >
             <Img
               src={item.image}
-              w={"364px"}
-              h={"177px"}
+              w={"100%"}
+              h={"100%"}
               _hover={{ transform: "scale(1.123)" }}
               transition={"ease"}
               transitionDuration={".4s"}
               alt={item.title}
               objectFit={"cover"}
+              objectPosition={"center"}
+              loading="lazy"
             />
             <Box
               className="project-layer"
