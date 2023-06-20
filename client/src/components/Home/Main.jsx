@@ -11,8 +11,8 @@ import {
 import { AiOutlineDownload } from "react-icons/ai";
 import abc from "../../assets/abc.png";
 import scrollDown from "../../assets/scroll.png";
-import myCV from "../../assets/cv/CV-23052023.pdf";
-import myResume from "../../assets/resume/Resume-26052023.pdf";
+import myCV from "../../assets/cv/CV-latest.pdf";
+import myResume from "../../assets/resume/Resume-latest.pdf";
 
 export const Main = ({ downloadCV, isTablet, isMobile, loading }) => {
   return (
